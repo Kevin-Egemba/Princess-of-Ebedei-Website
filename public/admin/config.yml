@@ -2,6 +2,10 @@ backend:
   name: github
   repo: Kevin-Egemba/Princess-of-Ebedei-Website
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://princess-of-ebedei-website.vercel.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
