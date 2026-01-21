@@ -7,18 +7,24 @@
   </head>
   <body>
     <script>
+      // Manual init mode
       window.CMS_MANUAL_INIT = true;
     </script>
 
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <script>
-      CMS.init({
+      // IMPORTANT: use initCMS (not CMS.init)
+      window.initCMS({
         config: {
+          // Ignore config.yml completely (prevents path/404/caching issues)
+          load_config_file: false,
+
           backend: {
             name: "github",
             repo: "Kevin-Egemba/Princess-of-Ebedei-Website",
             branch: "main",
+            // keep these for Netlify OAuth flow if you're using Netlify as the auth bridge
             base_url: "https://api.netlify.com",
             auth_endpoint: "auth",
           },
